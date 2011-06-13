@@ -94,10 +94,13 @@
         return;
 
       $.each(data, function(index, item) {
-        if (item.toLowerCase().indexOf(value) > -1)
+        if (item.toLowerCase().indexOf(value) > -1) {
+          var regx = new RegExp("(?![^&;]+;)(?!<[^<>]*)(" + value + ")(?![^<>]*>)(?![^&;]+;)", "gi");
+          item = item.replace(regx, "<strong>$1</strong>");
           var x = $('<li>' + item + '</li>');
           $(x).css(inactiveCss);
           ui.append(x);
+        }
       });
     
       that.after(ui);
