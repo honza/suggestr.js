@@ -15,9 +15,9 @@ At this point, only a jQuery version is available.
 Size
 ----
 
-* Development: 1.92kb
-* Minified: 1.14 bytes
-* Gzipped: 599 bytes
+* Development: 1.94kb
+* Minified: 1.16kb
+* Gzipped: 612 bytes
 
 
 More

@@ -26,7 +26,8 @@
   };
 
   var boxCss = {
-    width: '200px'
+    width: '200px',
+    position: 'absolute'
   };
 
   $.fn.suggestr = function(data) {
