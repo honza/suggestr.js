@@ -36,6 +36,7 @@
 
     ui = $('<div id="suggestr-div"></div>');
     ui.css(boxCss);
+    ui.data('active', 0);
 
     ui.delegate('li', 'mouseover', function() {
       $(this).css(activeCss);
@@ -48,16 +49,41 @@
     ui.delegate('li', 'click', function() {
       var val = $(this).text();
       that.val(val);
-      ui.children().remove();
+      reset();
     });
+
+    function moveSelection(direction) {
+      var index = ui.data('active');
+      if (direction == keyMap.up)
+        var newIndex = index - 1;
+      else
+        var newIndex = index + 1;
+      if (-1 < newIndex && newIndex < ui.children().length) {
+        ui.children().each(function(i, item) {
+          $(item).css(inactiveCss);
+        });
+        $(ui.children()[newIndex]).css(activeCss);
+        ui.data('active', newIndex);
+      }
+    }
+
+    function reset() {
+      ui.data('active', 0);
+      ui.children().remove();
+    }
 
     this.keyup(function(k) {
 
       if (k.keyCode == keyMap.enter) {
-        var val = ui.children().first().text();
+        var val = $(ui.children()[ui.data('active')]).text();
         that.val(val);
-        ui.children().remove();
+        reset();
         return;
+      }
+
+      if (k.keyCode == keyMap.up || k.keyCode == keyMap.down) {
+        moveSelection(k.keyCode);
+        return false;
       }
 
       ui.children().remove();
