@@ -19,8 +19,14 @@ Size
 * Minified: 1.16kb
 * Gzipped: 612 bytes
 
-
-More
+Note
 ----
 
-Non-jQuery version coming soon.
+A CoffeeScript version of this plugin is added for your convenience. The
+`jquery.suggestr.js` file wasn't produced by compiling
+`jquery.suggestr.coffee`.
+
+License
+-------
+
+BSD. Short and sweet.
