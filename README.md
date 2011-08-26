@@ -2,7 +2,7 @@ Suggestr.js
 ===========
 
 Suggestr.js is a dead simple, no configuration javascript autocompleter. Drop
-ip in your project and it will work. No nonsense. No bloat.
+it in your project and it will work. No nonsense. No bloat.
 
 Usage
 -----
