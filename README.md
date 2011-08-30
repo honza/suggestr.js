@@ -35,7 +35,7 @@ Note
 
 A CoffeeScript version of this plugin is added for your convenience. The
 `jquery.suggestr.js` file wasn't produced by compiling
-`jquery.suggestr.coffee`.
+`jquery.suggestr.coffee`. The same goes for the `pure-js` directory.
 
 License
 -------
