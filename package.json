@@ -1,0 +1,13 @@
+{
+    "name": "suggestr",
+    "version": "0.0.1",
+    "author": {
+        "name": "Honza Pokorny",
+        "url": "https://github.com/honza"
+    },
+    "license": "BSD",
+    "devDependencies": {
+        "uglify-js": ">= 1.0.7",
+        "coffee-script": ">= 1.1.2"
+    }
+}

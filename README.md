@@ -16,26 +16,27 @@ Usage
     var el = document.getElementById('input');
     suggestr(el, ['John', 'Peter', 'Mark']);
 
-
-Size
-----
-
-### jQuery
-
-* Minified: 1.3kb
-* Gzipped: 671 bytes
-
-### Pure JS
-
-* Minified: 1.42kb
-* Gzipped: 666 bytes
-
 Note
 ----
 
 A CoffeeScript version of this plugin is added for your convenience. The
 `jquery.suggestr.js` file wasn't produced by compiling
 `jquery.suggestr.coffee`. The same goes for the `pure-js` directory.
+
+Building
+--------
+
+To build the project, first install its dependencies via `npm`.
+
+    $ git clone git://github.com/honza/suggestr.js.git
+    $ cd suggestr.js
+    $ npm install
+
+Then, you can run the build command.
+
+    $ cake build
+
+This uses CoffeeScript and Uglify to compile and minify the source files.
 
 License
 -------
