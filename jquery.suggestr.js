@@ -54,11 +54,12 @@
     });
 
     function moveSelection(direction) {
-      var index = ui.data('active');
+      var index, newIndex;
+      index = ui.data('active');
       if (direction == keyMap.up)
-        var newIndex = index - 1;
+        newIndex = index - 1;
       else
-        var newIndex = index + 1;
+        newIndex = index + 1;
       if (-1 < newIndex && newIndex < ui.children().length) {
         ui.children().each(function(i, item) {
           $(item).css(inactiveCss);
@@ -73,18 +74,31 @@
       ui.children().remove();
     }
 
-    this.keyup(function(k) {
+    this.keydown(function(k) {
 
       if (k.keyCode == keyMap.enter) {
         var val = $(ui.children()[ui.data('active')]).text();
         that.val(val);
         reset();
-        return;
+
+        if (k.preventDefault) k.preventDefault();
+          else k.returnValue = false;
+        if (k.stopPropagation) k.stopPropagation();
+        if (k.cancelBubble) k.cancelBubble = true;
+
+        return false;
       }
+
+    });
+
+    this.keyup(function(k) {
+
+      if (k.keyCode == keyMap.enter)
+        return;
 
       if (k.keyCode == keyMap.up || k.keyCode == keyMap.down) {
         moveSelection(k.keyCode);
-        return false;
+        return;
       }
 
       ui.children().remove();

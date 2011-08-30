@@ -16,8 +16,8 @@ Size
 ----
 
 * Development: 1.94kb
-* Minified: 1.16kb
-* Gzipped: 612 bytes
+* Minified: 1.3kb
+* Gzipped: 671 bytes
 
 Note
 ----
