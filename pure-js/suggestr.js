@@ -92,10 +92,6 @@
         return;
       }
 
-      for (i=0; i < ui.children.length; i++) {
-        ui.removeChild(ui.children[i]);
-      }
-
       ui.innerHTML = "";
 
       value = el.value.toLowerCase();
