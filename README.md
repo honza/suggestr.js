@@ -7,17 +7,28 @@ it in your project and it will work. No nonsense. No bloat.
 Usage
 -----
 
-At this point, only a jQuery version is available.
+### jQuery
 
     $('#your-cool-input-field').suggestr(['John', 'Peter', 'Mark']);
+
+### Pure JS
+
+    var el = document.getElementById('input');
+    suggestr(el, ['John', 'Peter', 'Mark']);
 
 
 Size
 ----
 
-* Development: 1.94kb
+### jQuery
+
 * Minified: 1.3kb
 * Gzipped: 671 bytes
+
+### Pure JS
+
+* Minified: 1.42kb
+* Gzipped: 666 bytes
 
 Note
 ----
