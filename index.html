@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+    <script src="suggestr.js" type="text/javascript"></script>
+</head>
+<body>
+
+    <div id="wrap">
+
+        <h1>Suggestr.js</h1>
+
+        <p>Suggestr.js is a dead simple, no configuration javascript autocompleter. Drop
+        it in your project and it will work. No nonsense. No bloat.</p>
+
+        <h2>Usage</h2>
+
+        <h3>jQuery</h3>
+
+        <pre><code>$('#your-cool-input-field').suggestr(['John', 'Peter', 'Mark']);</code></pre>
+
+        <h3>Pure JS</h3>
+
+        <pre><code>var el = document.getElementById('input');
+suggestr(el, ['John', 'Peter', 'Mark']);</code></pre>
+
+        <h2>Note</h2>
+
+        <p>A CoffeeScript version of this plugin is added for your convenience. The
+        <code>jquery.suggestr.js</code> file wasn't produced by compiling
+        <code>jquery.suggestr.coffee</code>. The same goes for the <code>pure-js</code> directory.</p>
+
+        <h2>Building</h2>
+
+        <p>To build the project, first install its dependencies via <code>npm</code>.</p>
+
+        <pre><code>$ git clone git://github.com/honza/suggestr.js.git
+$ cd suggestr.js
+$ npm install</code></pre>
+
+        <p>Then, you can run the build command.</p>
+
+        <pre><code>$ cake build</code></pre>
+
+        <p>This uses CoffeeScript and Uglify to compile and minify the source files.</p>
+
+        <h2>License</h2>
+
+        <p>BSD. Short and sweet.</p>
+
+        <h2>Example</h2>
+
+        <p>Start typing in the box below:</p>
+
+        <div id="box">
+            <p>
+                <form>
+                    <input type="text" id="name" /> 
+                </form>
+            </p>
+        </div>
+
+        <a href="https://github.com/honza/suggestr.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
+
+    </div>
+</body>
+</html>
