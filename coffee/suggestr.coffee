@@ -40,10 +40,12 @@ do ->
         ui.children[newIndex].style.backgroundColor = '#ececec'
         cache = newIndex
 
-    ui = document.createElement 'div'
-    ui.id = 'suggestr-div'
-    ui.style.width = '200px'
-    ui.style.position = 'absolute'
+    ui = document.getElementById 'suggestr-div'
+    unless ui
+      ui = document.createElement 'div'
+      ui.id = 'suggestr-div'
+      ui.style.width = '200px'
+      ui.style.position = 'absolute'
 
     el.parentNode.appendChild ui
 

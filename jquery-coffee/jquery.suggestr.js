@@ -21,7 +21,7 @@
     return $.fn.suggestr = function(data) {
       var moveSelection, reset, that, ui;
       that = this;
-      ui = $('<div id="suggestr-div"></div>');
+      ui = document.getElementById('suggestr-div') || $('<div id="suggestr-div"></div>');
       ui.css(boxCss);
       ui.data('active', 0);
       reset = function() {

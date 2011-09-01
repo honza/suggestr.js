@@ -26,7 +26,7 @@
   $.fn.suggestr = (data) ->
 
     that = @
-    ui = $ '<div id="suggestr-div"></div>'
+    ui = document.getElementById('suggestr-div') or $('<div id="suggestr-div"></div>')
     ui.css boxCss
     ui.data 'active', 0
 

@@ -33,10 +33,13 @@
           return cache = newIndex;
         }
       };
-      ui = document.createElement('div');
-      ui.id = 'suggestr-div';
-      ui.style.width = '200px';
-      ui.style.position = 'absolute';
+      ui = document.getElementById('suggestr-div');
+      if (!ui) {
+        ui = document.createElement('div');
+        ui.id = 'suggestr-div';
+        ui.style.width = '200px';
+        ui.style.position = 'absolute';
+      }
       el.parentNode.appendChild(ui);
       el.onkeydown = function(k) {
         var value;

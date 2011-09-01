@@ -35,7 +35,7 @@
     var ui, that, value;
     that = this;
 
-    ui = $('<div id="suggestr-div"></div>');
+    ui = document.getElementById('suggestr-div') || $('<div id="suggestr-div"></div>');
     ui.css(boxCss);
     ui.data('active', 0);
 
