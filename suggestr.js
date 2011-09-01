@@ -59,12 +59,19 @@
     var ui, that, value, i, regex;
 
     // prepare ui
-    ui = document.createElement('div');
-    ui.id = 'suggestr-div';
-    ui.style.width = '200px';
-    ui.style.position = 'absolute';
+    ui = document.getElementById('suggestr-div');
+    if (!ui) {
+      ui = document.createElement('div');
+      ui.id = 'suggestr-div';
+      ui.style.width = '200px';
+      ui.style.position = 'absolute';
+    }
 
     el.parentNode.appendChild(ui);
+
+    el.onblur = function(e) {
+      el.parentElement.removeChild(ui);
+    };
 
     el.onkeydown = function(k) {
       if (k.keyCode == keyMap.enter) {
@@ -80,6 +87,15 @@
         return false;
       }
 
+      if (k.keyCode == keyMap.up || k.keyCode == keyMap.down) {
+        moveSelection(k.keyCode);
+        if (k.preventDefault) k.preventDefault();
+          else k.returnValue = false;
+        if (k.stopPropagation) k.stopPropagation();
+        if (k.cancelBubble) k.cancelBubble = true;
+        return false;
+      }
+
     };
 
     el.onkeyup = function(k) {
@@ -88,7 +104,6 @@
         return;
 
       if (k.keyCode == keyMap.up || k.keyCode == keyMap.down) {
-        moveSelection(k.keyCode);
         return;
       }
 
@@ -127,24 +142,13 @@
       }
 
       el.parentNode.appendChild(ui);
-      ui.firstChild.style.listStyle = 'none';
-      ui.firstChild.style.backgroundColor = '#ececec';
+      if (ui.children.length > 0) {
+        ui.firstChild.style.listStyle = 'none';
+        ui.firstChild.style.backgroundColor = '#ececec';
+      }
 
     };
 
   };
 
 })();
-
-function load() {
-    var el = document.getElementById('name');
-    var names = [
-        'John',
-        'Peter',
-        'Mark',
-        'Adam',
-        'David'
-    ];
-    suggestr(el, names);
-}
-document.addEventListener("DOMContentLoaded", load, false);
