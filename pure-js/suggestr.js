@@ -70,7 +70,9 @@
     el.parentNode.appendChild(ui);
 
     el.onblur = function(e) {
-      el.parentElement.removeChild(ui);
+      try {
+        el.parentElement.removeChild(ui);
+      } catch (e){};
     };
 
     el.onkeydown = function(k) {

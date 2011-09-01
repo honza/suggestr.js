@@ -50,7 +50,9 @@ do ->
     el.parentNode.appendChild ui
 
     el.onblur = (e) ->
-      el.parentElement.removeChild ui
+      try
+        el.parentElement.removeChild ui
+      catch e
 
     el.onkeydown = (k) ->
       if k.keyCode is keyMap.enter

@@ -42,7 +42,11 @@
       }
       el.parentNode.appendChild(ui);
       el.onblur = function(e) {
-        return el.parentElement.removeChild(ui);
+        try {
+          return el.parentElement.removeChild(ui);
+        } catch (e) {
+
+        }
       };
       el.onkeydown = function(k) {
         var value;
