@@ -142,8 +142,10 @@
       }
 
       el.parentNode.appendChild(ui);
-      ui.firstChild.style.listStyle = 'none';
-      ui.firstChild.style.backgroundColor = '#ececec';
+      if (ui.children.length > 0) {
+        ui.firstChild.style.listStyle = 'none';
+        ui.firstChild.style.backgroundColor = '#ececec';
+      }
 
     };
 

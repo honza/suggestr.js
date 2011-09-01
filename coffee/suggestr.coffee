@@ -125,5 +125,7 @@ do ->
           ui.appendChild li
 
       el.parentNode.appendChild
-      ui.firstChild.style.listStyle = 'none'
-      ui.firstChild.style.backgroundColor = '#ececec'
+
+      if ui.children.length > 0
+        ui.firstChild.style.listStyle = 'none'
+        ui.firstChild.style.backgroundColor = '#ececec'

@@ -115,8 +115,10 @@
           }
         }
         el.parentNode.appendChild;
-        ui.firstChild.style.listStyle = 'none';
-        return ui.firstChild.style.backgroundColor = '#ececec';
+        if (ui.children.length > 0) {
+          ui.firstChild.style.listStyle = 'none';
+          return ui.firstChild.style.backgroundColor = '#ececec';
+        }
       };
     };
   })();
