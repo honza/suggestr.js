@@ -49,6 +49,9 @@ do ->
 
     el.parentNode.appendChild ui
 
+    el.onblur = (e) ->
+      el.parentElement.removeChild ui
+
     el.onkeydown = (k) ->
       if k.keyCode is keyMap.enter
         value = ui.children[cache].innerText

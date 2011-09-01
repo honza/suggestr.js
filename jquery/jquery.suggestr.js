@@ -74,6 +74,10 @@
       ui.children().remove();
     }
 
+    this.blur(function(e) {
+      ui.remove();
+    });
+
     this.keydown(function(k) {
 
       if (k.keyCode == keyMap.enter) {

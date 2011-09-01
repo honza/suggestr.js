@@ -69,6 +69,10 @@
 
     el.parentNode.appendChild(ui);
 
+    el.onblur = function(e) {
+      el.parentElement.removeChild(ui);
+    };
+
     el.onkeydown = function(k) {
       if (k.keyCode == keyMap.enter) {
         value = ui.children[cache].innerText;

@@ -41,6 +41,9 @@
         ui.style.position = 'absolute';
       }
       el.parentNode.appendChild(ui);
+      el.onblur = function(e) {
+        return el.parentElement.removeChild(ui);
+      };
       el.onkeydown = function(k) {
         var value;
         if (k.keyCode === keyMap.enter) {

@@ -60,6 +60,9 @@
         that.val(val);
         return reset();
       });
+      this.blur(function(e) {
+        return ui.remove();
+      });
       this.keydown(function(k) {
         var val;
         if (k.keyCode === keyMap.enter) {

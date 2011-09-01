@@ -59,6 +59,9 @@
       that.val val
       do reset
 
+    @blur (e) ->
+      do ui.remove
+
     @keydown (k) ->
 
       if k.keyCode is keyMap.enter
