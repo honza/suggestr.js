@@ -79,6 +79,21 @@
           }
           return false;
         }
+        if (k.keyCode === keyMap.up || k.keyCode === keyMap.down) {
+          moveSelection(k.keyCode);
+          if (k.preventDefault) {
+            k.preventDefault();
+          } else {
+            k.returnValue = false;
+          }
+          if (k.stopPropagation) {
+            k.stopPropagation();
+          }
+          if (k.cancelBubble) {
+            k.cancelBubble = true;
+          }
+          return false;
+        }
       });
       return this.keyup(function(k) {
         var item, regx, value, x, _i, _len;
@@ -86,8 +101,7 @@
           return;
         }
         if (k.keyCode === keyMap.up || k.keyCode === keyMap.down) {
-          moveSelection(k.keyCode);
-          return false;
+          return;
         }
         ui.children().remove();
         value = that.val().toLowerCase();

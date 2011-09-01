@@ -77,14 +77,27 @@
 
         return false
 
+      if k.keyCode is keyMap.up or k.keyCode is keyMap.down
+        moveSelection k.keyCode
+
+        if k.preventDefault
+          do k.preventDefault
+        else
+          k.returnValue = false
+        if k.stopPropagation
+          do k.stopPropagation
+        if k.cancelBubble
+          k.cancelBubble = true
+
+        return false
+
     @keyup (k) ->
 
       if k.keyCode is keyMap.enter
         return
 
       if k.keyCode is keyMap.up or k.keyCode is keyMap.down
-        moveSelection k.keyCode
-        return false
+        return
 
       ui.children().remove()
 

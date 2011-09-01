@@ -80,6 +80,15 @@
         return false;
       }
 
+      if (k.keyCode == keyMap.up || k.keyCode == keyMap.down) {
+        moveSelection(k.keyCode);
+        if (k.preventDefault) k.preventDefault();
+          else k.returnValue = false;
+        if (k.stopPropagation) k.stopPropagation();
+        if (k.cancelBubble) k.cancelBubble = true;
+        return false;
+      }
+
     };
 
     el.onkeyup = function(k) {
@@ -88,7 +97,6 @@
         return;
 
       if (k.keyCode == keyMap.up || k.keyCode == keyMap.down) {
-        moveSelection(k.keyCode);
         return;
       }
 
