@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Helvetica';
+}
+
+#wrap {
+    width: 600px;
+    margin: 0 auto;
+}
+
+pre {
+    margin: 1em 0;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 5px;
+    color #444;
+    overflow: auto;
+    border-radius: 3px;
+}
+
+pre code {
+    padding: 0;
+    color: #444;
+    border: none;
+    background-color: #eee;
+}
+
+code {
+    color: #444;
+    border: 1px solid #dedede;
+    background-color: #f8f8f8;
+}
