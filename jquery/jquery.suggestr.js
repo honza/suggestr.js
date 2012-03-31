@@ -1,31 +1,30 @@
-/*
- * Suggestr - the dead simple autocompleter for jQuery
- * Author: Honza Pokorny
- * Usage: $('#input').suggestr(['John', 'Peter', 'Mark']);
- * URL: https://github.com/honza/suggestr.js
- * License: BSD
- *
- */
+// Suggestr - the dead simple autocompleter for jQuery
+//
+// Copyright (c) 2011, Honza Pokorny
+// Suggestr may be freely distributed under the BSD license.
+// https://github.com/honza/suggestr.js
 
 (function($) {
-  
-  var keyMap = {
+
+  var keyMap, activeCss, inactiveCss, boxCss;
+
+  keyMap = {
     up: 38,
     down: 40,
     enter: 13
   };
 
-  var activeCss = {
+  activeCss = {
     listStyle: 'none',
     backgroundColor: '#ececec'
   };
 
-  var inactiveCss = {
+  inactiveCss = {
     listStyle: 'none',
     backgroundColor: '#fff'
   };
 
-  var boxCss = {
+  boxCss = {
     width: '200px',
     position: 'absolute'
   };
@@ -56,10 +55,13 @@
     function moveSelection(direction) {
       var index, newIndex;
       index = ui.data('active');
-      if (direction == keyMap.up)
+
+      if (direction == keyMap.up) {
         newIndex = index - 1;
-      else
+      } else {
         newIndex = index + 1;
+      }
+
       if (-1 < newIndex && newIndex < ui.children().length) {
         ui.children().each(function(i, item) {
           $(item).css(inactiveCss);
@@ -82,13 +84,21 @@
 
       if (k.keyCode == keyMap.enter) {
         var val = $(ui.children()[ui.data('active')]).text();
+
         that.val(val);
         reset();
 
-        if (k.preventDefault) k.preventDefault();
-          else k.returnValue = false;
-        if (k.stopPropagation) k.stopPropagation();
-        if (k.cancelBubble) k.cancelBubble = true;
+        if (k.preventDefault) {
+          k.preventDefault();
+        } else {
+          k.returnValue = false;
+        }
+        if (k.stopPropagation) {
+          k.stopPropagation();
+        }
+        if (k.cancelBubble) {
+          k.cancelBubble = true;
+        }
 
         return false;
       }
@@ -131,7 +141,7 @@
           ui.append(x);
         }
       });
-    
+
       that.after(ui);
       ui.children().first().css(activeCss);
 
