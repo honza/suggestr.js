@@ -1,4 +1,4 @@
-// Suggestr - the dead simple autocompleter for jQuery
+// Suggestr - the dead simple autocompleter
 //
 // Copyright (c) 2011, Honza Pokorny
 // Suggestr may be freely distributed under the BSD license.

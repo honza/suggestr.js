@@ -1,13 +1,8 @@
-/*
- * Suggestr - the dead simple autocompleter for jQuery
- * Author: Honza Pokorny
- * Usage: 
- *  var el = document.getElementById('input');
- *  suggestr(el, ['John', 'Peter', 'Mark']);
- * URL: https://github.com/honza/suggestr.js
- * License: BSD
- *
- */
+// Suggestr - the dead simple autocompleter
+//
+// Copyright (c) 2011, Honza Pokorny
+// Suggestr may be freely distributed under the BSD license.
+// https://github.com/honza/suggestr.js
 
 (function() {
 
